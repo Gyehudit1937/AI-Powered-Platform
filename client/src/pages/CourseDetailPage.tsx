@@ -29,15 +29,15 @@ export default function CourseDetailPage() {
     if (!courseId) return
     fetchCourseDetail(courseId)
       .then(setCourse)
-      .catch(() => setError('Course not found.'))
+      .catch(() => setError('הקורס לא נמצא.'))
       .finally(() => setLoading(false))
   }, [courseId])
 
   if (loading) return <Box display="flex" justifyContent="center" mt={12}><CircularProgress /></Box>
   if (error || !course) return (
     <Container maxWidth="md" sx={{ py: 6 }}>
-      <Typography color="error">{error ?? 'Unknown error'}</Typography>
-      <Button onClick={() => navigate('/')} sx={{ mt: 2 }}>Back to dashboard</Button>
+      <Typography color="error">{error ?? 'שגיאה לא ידועה'}</Typography>
+      <Button onClick={() => navigate('/')} sx={{ mt: 2 }}>חזרה לדף הבית</Button>
     </Container>
   )
 
@@ -45,7 +45,7 @@ export default function CourseDetailPage() {
     <Container maxWidth="md" sx={{ py: 6 }}>
       <Breadcrumbs sx={{ mb: 3 }}>
         <Button size="small" startIcon={<ArrowBackIcon />} onClick={() => navigate('/')}>
-          Dashboard
+          דף הבית
         </Button>
         <Typography color="text.primary">{course.title}</Typography>
       </Breadcrumbs>

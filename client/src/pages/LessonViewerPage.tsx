@@ -32,15 +32,18 @@ function MarkdownContent({ content }: { content: string }) {
           <Box
             key={key++}
             component="pre"
-            sx={{
-              bgcolor: '#1e1e1e',
+            dir="ltr"
+            my={2}
+            style={{
+              backgroundColor: '#1e1e1e',
               color: '#d4d4d4',
-              p: 2.5,
-              borderRadius: 2,
+              padding: '20px',
+              borderRadius: 8,
               overflowX: 'auto',
               fontSize: '0.875rem',
               fontFamily: 'monospace',
-              my: 2,
+              textAlign: 'left',
+              direction: 'ltr',
             }}
           >
             <code>{codeBuffer.join('\n')}</code>
@@ -117,7 +120,7 @@ export default function LessonViewerPage() {
   if (loading) return <Box display="flex" justifyContent="center" mt={12}><CircularProgress /></Box>
   if (!lesson || !section || !course) return (
     <Container maxWidth="md" sx={{ py: 6 }}>
-      <Typography color="error">Lesson not found.</Typography>
+      <Typography color="error">השיעור לא נמצא.</Typography>
     </Container>
   )
 
@@ -127,7 +130,7 @@ export default function LessonViewerPage() {
     <Container maxWidth="md" sx={{ py: 6 }}>
       <Breadcrumbs sx={{ mb: 3 }}>
         <Button size="small" startIcon={<ArrowBackIcon />} onClick={() => navigate('/')}>
-          Dashboard
+          דף הבית
         </Button>
         <Button size="small" onClick={() => navigate(`/courses/${courseId}`)}>
           {course.title}
@@ -155,7 +158,7 @@ export default function LessonViewerPage() {
             startIcon={<CheckCircleIcon />}
             onClick={handleComplete}
           >
-            Mark Complete & Continue
+            סמן כהושלם והמשך
           </Button>
         )}
         {isCurrentLesson && nextLesson && (
@@ -164,12 +167,12 @@ export default function LessonViewerPage() {
             size="large"
             onClick={() => navigate(`/courses/${courseId}/lessons/${nextLesson.id}`)}
           >
-            Next Lesson →
+            ← השיעור הבא
           </Button>
         )}
         {!nextLesson && (
           <Button variant="contained" color="success" size="large" startIcon={<CheckCircleIcon />} onClick={handleComplete}>
-            Complete Course 🎉
+            סיימו את הקורס 🎉
           </Button>
         )}
       </Stack>
@@ -178,7 +181,7 @@ export default function LessonViewerPage() {
         open={snackOpen}
         autoHideDuration={1500}
         onClose={() => setSnackOpen(false)}
-        message="Progress saved!"
+        message="ההתקדמות נשמרה!"
       />
     </Container>
   )

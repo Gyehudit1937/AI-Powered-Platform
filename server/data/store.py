@@ -1,65 +1,65 @@
 COURSES_DB: dict = {
     "course-04": {
         "id": "course-04",
-        "title": "Git & GitHub for Teams",
-        "description": "Master version control workflows, branching strategies, pull requests, and CI/CD pipelines used in real dev teams.",
+        "title": "גיט ו-GitHub לצוותים",
+        "description": "שליטה בתהליכי עבודה של בקרת גרסאות, אסטרטגיות ענפים (branching), Pull Requests וצנרות CI/CD כפי שהן משמשות בצוותי פיתוח אמיתיים.",
         "image_url": "https://placehold.co/600x340/f57c00/ffffff?text=Git+%26+GitHub",
         "sections": {
             "section-07": {
                 "id": "section-07",
                 "course_id": "course-04",
-                "title": "Git Core Concepts",
+                "title": "מושגי יסוד ב-Git",
                 "order": 1,
                 "lessons": {
                     "lesson-07-01": {
                         "id": "lesson-07-01",
                         "section_id": "section-07",
-                        "title": "Commits, Staging & History",
+                        "title": "Commits, Staging וההיסטוריה",
                         "order": 1,
-                        "content": "# Commits, Staging & History\n\nGit tracks changes in three areas:\n\n- **Working Directory** — your local file edits\n- **Staging Area (Index)** — changes marked for the next commit\n- **Repository** — committed history\n\n```bash\ngit add src/app.py      # stage a specific file\ngit commit -m 'feat: add login route'\ngit log --oneline       # compact history view\n```",
+                        "content": "# Commits, Staging וההיסטוריה\n\nGit עוקב אחרי שינויים בשלושה אזורים:\n\n- **Working Directory** — העריכות המקומיות שלכם בקבצים\n- **Staging Area (Index)** — שינויים שסומנו ל-commit הבא\n- **Repository** — ההיסטוריה שכבר בוצע לה commit\n\n```bash\ngit add src/app.py      # מוסיף קובץ ספציפי ל-staging\ngit commit -m 'feat: add login route'\ngit log --oneline       # תצוגה קומפקטית של ההיסטוריה\n```",
                     },
                     "lesson-07-02": {
                         "id": "lesson-07-02",
                         "section_id": "section-07",
-                        "title": "Branching & Merging",
+                        "title": "Branching ו-Merging (ענפים ומיזוג)",
                         "order": 2,
-                        "content": "# Branching & Merging\n\nBranches let you work in isolation without affecting `main`.\n\n```bash\ngit checkout -b feature/auth   # create and switch\ngit merge feature/auth          # merge into current branch\ngit branch -d feature/auth      # delete after merge\n```\n\n## Fast-Forward vs. 3-Way Merge\n- **Fast-forward:** no divergence — Git simply moves the pointer.\n- **3-way merge:** branches diverged — Git creates a merge commit.",
+                        "content": "# Branching ו-Merging (ענפים ומיזוג)\n\nענפים (branches) מאפשרים לכם לעבוד בבידוד בלי להשפיע על `main`.\n\n```bash\ngit checkout -b feature/auth   # יצירה ומעבר לענף חדש\ngit merge feature/auth          # מיזוג לענף הנוכחי\ngit branch -d feature/auth      # מחיקה אחרי המיזוג\n```\n\n## Fast-Forward מול מיזוג תלת-כיווני\n- **Fast-forward:** אין הסתעפות — Git פשוט מזיז את המצביע קדימה.\n- **מיזוג תלת-כיווני (3-way):** הענפים התפצלו — Git יוצר commit מיזוג ייעודי.",
                     },
                     "lesson-07-03": {
                         "id": "lesson-07-03",
                         "section_id": "section-07",
-                        "title": "Rebase & Cherry-Pick",
+                        "title": "Rebase ו-Cherry-Pick",
                         "order": 3,
-                        "content": "# Rebase & Cherry-Pick\n\n`rebase` replays your commits on top of another branch — keeps history linear.\n\n```bash\ngit rebase main            # replay current branch on top of main\ngit cherry-pick a1b2c3d   # apply a single commit to current branch\n```\n\n> Never rebase commits already pushed to a shared branch.",
+                        "content": "# Rebase ו-Cherry-Pick\n\n`rebase` מנגן מחדש את ה-commits שלכם מעל ענף אחר — שומר על היסטוריה ליניארית.\n\n```bash\ngit rebase main            # ניגון מחדש של הענף הנוכחי מעל main\ngit cherry-pick a1b2c3d   # החלת commit בודד על הענף הנוכחי\n```\n\n> לעולם אל תעשו rebase ל-commits שכבר נדחפו (pushed) לענף משותף.",
                     },
                 },
             },
             "section-08": {
                 "id": "section-08",
                 "course_id": "course-04",
-                "title": "GitHub Workflows",
+                "title": "תהליכי עבודה ב-GitHub",
                 "order": 2,
                 "lessons": {
                     "lesson-08-01": {
                         "id": "lesson-08-01",
                         "section_id": "section-08",
-                        "title": "Pull Requests & Code Review",
+                        "title": "Pull Requests וסקירת קוד",
                         "order": 1,
-                        "content": "# Pull Requests & Code Review\n\nA PR proposes changes from one branch into another and triggers a review process.\n\n## Good PR Hygiene\n- Keep PRs small and focused on a single concern.\n- Write a clear description: *what* changed and *why*.\n- Link to the related issue.\n\n## Review Etiquette\n- Comment on the code, not the person.\n- Use *Suggest Changes* for minor fixes.",
+                        "content": "# Pull Requests וסקירת קוד\n\nPR (Pull Request) מציע שינויים מענף אחד לתוך ענף אחר, ומפעיל תהליך סקירה.\n\n## היגיינת PR טובה\n- שמרו על PRs קטנים וממוקדים בנושא אחד.\n- כתבו תיאור ברור: *מה* השתנה ו*למה*.\n- קשרו לישוט (issue) הרלוונטי.\n\n## נימוסי סקירה\n- הערות על הקוד, לא על האדם.\n- השתמשו ב-*Suggest Changes* לתיקונים קטנים.",
                     },
                     "lesson-08-02": {
                         "id": "lesson-08-02",
                         "section_id": "section-08",
-                        "title": "GitHub Actions CI/CD",
+                        "title": "GitHub Actions ו-CI/CD",
                         "order": 2,
-                        "content": "# GitHub Actions CI/CD\n\nAutomate tests and deployments on every push.\n\n```yaml\nname: CI\non: [push, pull_request]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with: { python-version: '3.12' }\n      - run: pip install -r requirements.txt\n      - run: pytest\n```",
+                        "content": "# GitHub Actions ו-CI/CD\n\nהרצה אוטומטית של טסטים ופריסות (deployments) על כל push.\n\n```yaml\nname: CI\non: [push, pull_request]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with: { python-version: '3.12' }\n      - run: pip install -r requirements.txt\n      - run: pytest\n```",
                     },
                     "lesson-08-03": {
                         "id": "lesson-08-03",
                         "section_id": "section-08",
-                        "title": "Branch Protection & Secrets",
+                        "title": "הגנת ענפים (Branch Protection) וסודות (Secrets)",
                         "order": 3,
-                        "content": "# Branch Protection & Secrets\n\n## Branch Protection Rules\n- Require PR reviews before merging to `main`.\n- Require status checks (CI) to pass.\n- Restrict force-pushes.\n\n## Managing Secrets\n- Store API keys in **GitHub Secrets** (Settings → Secrets).\n- Reference in workflows: `${{ secrets.API_KEY }}`.\n- Never commit secrets to the repository.",
+                        "content": "# הגנת ענפים (Branch Protection) וסודות (Secrets)\n\n## כללי הגנת ענפים\n- דרשו סקירות PR לפני מיזוג ל-`main`.\n- דרשו שבדיקות סטטוס (CI) יעברו בהצלחה.\n- הגבילו force-push.\n\n## ניהול Secrets\n- שמרו מפתחות API ב-**GitHub Secrets** (Settings → Secrets).\n- התייחסו אליהם ב-workflows: `${{ secrets.API_KEY }}`.\n- לעולם אל תעשו commit ל-secrets בתוך הריפוזיטורי.",
                     },
                 },
             },
@@ -67,65 +67,65 @@ COURSES_DB: dict = {
     },
     "course-05": {
         "id": "course-05",
-        "title": "CSS & UI Design Fundamentals",
-        "description": "Go from zero to confident UI developer. Master Flexbox, Grid, animations, and design systems.",
+        "title": "יסודות CSS ועיצוב ממשק משתמש",
+        "description": "מאפס למפתח/ת UI בטוח/ה בעצמו/ה. שליטה ב-Flexbox, Grid, אנימציות ומערכות עיצוב.",
         "image_url": "https://placehold.co/600x340/7b1fa2/ffffff?text=CSS+%26+UI+Design",
         "sections": {
             "section-09": {
                 "id": "section-09",
                 "course_id": "course-05",
-                "title": "Layout Systems",
+                "title": "מערכות פריסה (Layout)",
                 "order": 1,
                 "lessons": {
                     "lesson-09-01": {
                         "id": "lesson-09-01",
                         "section_id": "section-09",
-                        "title": "Flexbox Mastery",
+                        "title": "שליטה ב-Flexbox",
                         "order": 1,
-                        "content": "# Flexbox Mastery\n\nFlexbox is a one-dimensional layout system (row OR column).\n\n```css\n.container {\n  display: flex;\n  justify-content: space-between; /* main axis */\n  align-items: center;            /* cross axis */\n  gap: 16px;\n}\n```\n\n## Key Properties\n- `flex-grow` — how much extra space an item takes.\n- `flex-shrink` — how much an item shrinks.\n- `flex-basis` — the item's ideal starting size.",
+                        "content": "# שליטה ב-Flexbox\n\nFlexbox היא מערכת פריסה חד-ממדית (שורה או עמודה).\n\n```css\n.container {\n  display: flex;\n  justify-content: space-between; /* ציר ראשי */\n  align-items: center;            /* ציר משני */\n  gap: 16px;\n}\n```\n\n## מאפיינים מרכזיים\n- `flex-grow` — כמה מקום נוסף פריט תופס.\n- `flex-shrink` — כמה פריט מתכווץ.\n- `flex-basis` — הגודל ההתחלתי האידאלי של הפריט.",
                     },
                     "lesson-09-02": {
                         "id": "lesson-09-02",
                         "section_id": "section-09",
                         "title": "CSS Grid",
                         "order": 2,
-                        "content": "# CSS Grid\n\nGrid is a two-dimensional layout system (rows AND columns simultaneously).\n\n```css\n.grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 24px;\n}\n\n.featured {\n  grid-column: span 2; /* takes 2 columns */\n}\n```\n\nUse Grid for page-level layout; use Flexbox for component-level alignment.",
+                        "content": "# CSS Grid\n\nGrid היא מערכת פריסה דו-ממדית (שורות ועמודות בו-זמנית).\n\n```css\n.grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 24px;\n}\n\n.featured {\n  grid-column: span 2; /* תופס 2 עמודות */\n}\n```\n\nהשתמשו ב-Grid לפריסת עמוד כללית; ב-Flexbox ליישור ברמת רכיב.",
                     },
                     "lesson-09-03": {
                         "id": "lesson-09-03",
                         "section_id": "section-09",
-                        "title": "Responsive Design & Media Queries",
+                        "title": "עיצוב רספונסיבי ו-Media Queries",
                         "order": 3,
-                        "content": "# Responsive Design & Media Queries\n\n## Mobile-First Approach\nWrite base styles for mobile, then add complexity for larger screens.\n\n```css\n.card { font-size: 14px; }\n\n@media (min-width: 768px) {\n  .card { font-size: 16px; }\n}\n\n@media (min-width: 1200px) {\n  .card { font-size: 18px; }\n}\n```\n\nUse `rem` units for scalable typography.",
+                        "content": "# עיצוב רספונסיבי ו-Media Queries\n\n## גישת Mobile-First\nכתבו סגנונות בסיס למובייל, ואז הוסיפו מורכבות למסכים גדולים יותר.\n\n```css\n.card { font-size: 14px; }\n\n@media (min-width: 768px) {\n  .card { font-size: 16px; }\n}\n\n@media (min-width: 1200px) {\n  .card { font-size: 18px; }\n}\n```\n\nהשתמשו ביחידות `rem` לטיפוגרפיה גמישה.",
                     },
                 },
             },
             "section-10": {
                 "id": "section-10",
                 "course_id": "course-05",
-                "title": "Design Systems",
+                "title": "מערכות עיצוב (Design Systems)",
                 "order": 2,
                 "lessons": {
                     "lesson-10-01": {
                         "id": "lesson-10-01",
                         "section_id": "section-10",
-                        "title": "Design Tokens & Variables",
+                        "title": "Design Tokens ומשתנים",
                         "order": 1,
-                        "content": "# Design Tokens & Variables\n\nDesign tokens are the smallest reusable design decisions (colors, spacing, font sizes).\n\n```css\n:root {\n  --color-primary: #1976d2;\n  --color-surface: #ffffff;\n  --spacing-md: 16px;\n  --radius-md: 8px;\n  --font-body: 'Inter', sans-serif;\n}\n\n.button {\n  background: var(--color-primary);\n  padding: var(--spacing-md);\n  border-radius: var(--radius-md);\n}\n```",
+                        "content": "# Design Tokens ומשתנים\n\nDesign Tokens הם החלטות העיצוב הקטנות ביותר הניתנות לשימוש חוזר (צבעים, ריווחים, גדלי גופן).\n\n```css\n:root {\n  --color-primary: #1976d2;\n  --color-surface: #ffffff;\n  --spacing-md: 16px;\n  --radius-md: 8px;\n  --font-body: 'Inter', sans-serif;\n}\n\n.button {\n  background: var(--color-primary);\n  padding: var(--spacing-md);\n  border-radius: var(--radius-md);\n}\n```",
                     },
                     "lesson-10-02": {
                         "id": "lesson-10-02",
                         "section_id": "section-10",
-                        "title": "CSS Animations & Transitions",
+                        "title": "אנימציות ומעברים (Transitions) ב-CSS",
                         "order": 2,
-                        "content": "# CSS Animations & Transitions\n\n## Transitions\nSmooth change between two states.\n```css\n.button {\n  transition: background 0.2s ease, transform 0.15s ease;\n}\n.button:hover {\n  background: #1565c0;\n  transform: translateY(-2px);\n}\n```\n\n## Keyframe Animations\n```css\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(8px); }\n  to   { opacity: 1; transform: translateY(0); }\n}\n.card { animation: fadeIn 0.3s ease forwards; }\n```",
+                        "content": "# אנימציות ומעברים (Transitions) ב-CSS\n\n## Transitions\nמעבר חלק בין שני מצבים.\n```css\n.button {\n  transition: background 0.2s ease, transform 0.15s ease;\n}\n.button:hover {\n  background: #1565c0;\n  transform: translateY(-2px);\n}\n```\n\n## אנימציות Keyframe\n```css\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(8px); }\n  to   { opacity: 1; transform: translateY(0); }\n}\n.card { animation: fadeIn 0.3s ease forwards; }\n```",
                     },
                     "lesson-10-03": {
                         "id": "lesson-10-03",
                         "section_id": "section-10",
-                        "title": "Typography & Color Theory",
+                        "title": "טיפוגרפיה ותורת הצבע",
                         "order": 3,
-                        "content": "# Typography & Color Theory\n\n## Type Scale\nUse a consistent modular scale: 12 / 14 / 16 / 20 / 24 / 32 / 48px.\n\n## Color Roles\n- **Primary** — main brand action (buttons, links)\n- **Surface** — background of cards and panels\n- **On-Surface** — text placed on surfaces\n- **Error / Success / Warning** — semantic states\n\n## Contrast\nEnsure at least **4.5:1** contrast ratio for body text (WCAG AA).",
+                        "content": "# טיפוגרפיה ותורת הצבע\n\n## סולם גדלים (Type Scale)\nהשתמשו בסולם מודולרי עקבי: 12 / 14 / 16 / 20 / 24 / 32 / 48px.\n\n## תפקידי צבע\n- **Primary** — פעולת המותג המרכזית (כפתורים, קישורים)\n- **Surface** — רקע של כרטיסים ופאנלים\n- **On-Surface** — טקסט המונח על Surface\n- **Error / Success / Warning** — מצבים סמנטיים\n\n## ניגודיות (Contrast)\nודאו יחס ניגודיות של לפחות **4.5:1** לטקסט גוף (תקן WCAG AA).",
                     },
                 },
             },
@@ -133,65 +133,65 @@ COURSES_DB: dict = {
     },
     "course-06": {
         "id": "course-06",
-        "title": "Algorithms & Data Structures",
-        "description": "Ace technical interviews and write efficient code. Covers sorting, trees, graphs, dynamic programming and more.",
+        "title": "אלגוריתמים ומבני נתונים",
+        "description": "הצליחו בראיונות טכניים וכתבו קוד יעיל. כולל מיון, עצים, גרפים, תכנות דינמי ועוד.",
         "image_url": "https://placehold.co/600x340/c62828/ffffff?text=Algorithms+%26+DSA",
         "sections": {
             "section-11": {
                 "id": "section-11",
                 "course_id": "course-06",
-                "title": "Core Data Structures",
+                "title": "מבני נתונים בסיסיים",
                 "order": 1,
                 "lessons": {
                     "lesson-11-01": {
                         "id": "lesson-11-01",
                         "section_id": "section-11",
-                        "title": "Arrays & Hash Maps",
+                        "title": "מערכים (Arrays) ו-Hash Maps",
                         "order": 1,
-                        "content": "# Arrays & Hash Maps\n\n## Arrays\n- O(1) read by index, O(n) search.\n- Best for ordered, fixed-size collections.\n\n## Hash Maps\n- O(1) average insert, lookup, delete.\n- Python: `dict`. JS: `Map` or plain object.\n\n```python\n# Two-Sum using a hash map — O(n)\ndef two_sum(nums, target):\n    seen = {}\n    for i, n in enumerate(nums):\n        complement = target - n\n        if complement in seen:\n            return [seen[complement], i]\n        seen[n] = i\n```",
+                        "content": "# מערכים (Arrays) ו-Hash Maps\n\n## מערכים (Arrays)\n- קריאה לפי אינדקס ב-O(1), חיפוש ב-O(n).\n- הכי טוב לאוספים מסודרים בגודל קבוע.\n\n## Hash Maps\n- הוספה, חיפוש ומחיקה ב-O(1) בממוצע.\n- Python: `dict`. JS: `Map` או אובייקט רגיל.\n\n```python\n# Two-Sum עם hash map — O(n)\ndef two_sum(nums, target):\n    seen = {}\n    for i, n in enumerate(nums):\n        complement = target - n\n        if complement in seen:\n            return [seen[complement], i]\n        seen[n] = i\n```",
                     },
                     "lesson-11-02": {
                         "id": "lesson-11-02",
                         "section_id": "section-11",
-                        "title": "Stacks & Queues",
+                        "title": "מחסניות (Stacks) ותורים (Queues)",
                         "order": 2,
-                        "content": "# Stacks & Queues\n\n## Stack — LIFO\n```python\nstack = []\nstack.append(1)   # push\nstack.pop()       # pop  → O(1)\n```\nUse for: undo history, DFS, balanced parentheses.\n\n## Queue — FIFO\n```python\nfrom collections import deque\nq = deque()\nq.append(1)       # enqueue\nq.popleft()       # dequeue → O(1)\n```\nUse for: BFS, task scheduling.",
+                        "content": "# מחסניות (Stacks) ותורים (Queues)\n\n## Stack — LIFO (אחרון נכנס, ראשון יוצא)\n```python\nstack = []\nstack.append(1)   # push\nstack.pop()       # pop  → O(1)\n```\nשימושים: היסטוריית undo, DFS, בדיקת סוגריים מאוזנים.\n\n## Queue — FIFO (ראשון נכנס, ראשון יוצא)\n```python\nfrom collections import deque\nq = deque()\nq.append(1)       # enqueue\nq.popleft()       # dequeue → O(1)\n```\nשימושים: BFS, תזמון משימות.",
                     },
                     "lesson-11-03": {
                         "id": "lesson-11-03",
                         "section_id": "section-11",
-                        "title": "Binary Trees & BST",
+                        "title": "עצים בינאריים ו-BST",
                         "order": 3,
-                        "content": "# Binary Trees & BST\n\nA **Binary Search Tree** satisfies: left child < node < right child.\n\n```python\nclass Node:\n    def __init__(self, val):\n        self.val = val\n        self.left = self.right = None\n\ndef inorder(node):\n    if node:\n        inorder(node.left)\n        print(node.val)\n        inorder(node.right)\n```\n\n## Complexities (Balanced BST)\n- Search, Insert, Delete: O(log n)\n- Worst case (skewed): O(n)",
+                        "content": "# עצים בינאריים ו-BST\n\n**עץ חיפוש בינארי (BST)** מקיים: הבן השמאלי < הצומת < הבן הימני.\n\n```python\nclass Node:\n    def __init__(self, val):\n        self.val = val\n        self.left = self.right = None\n\ndef inorder(node):\n    if node:\n        inorder(node.left)\n        print(node.val)\n        inorder(node.right)\n```\n\n## סיבוכיות (עץ מאוזן)\n- חיפוש, הוספה, מחיקה: O(log n)\n- מקרה גרוע (עץ מוטה): O(n)",
                     },
                 },
             },
             "section-12": {
                 "id": "section-12",
                 "course_id": "course-06",
-                "title": "Sorting & Searching",
+                "title": "מיון וחיפוש",
                 "order": 2,
                 "lessons": {
                     "lesson-12-01": {
                         "id": "lesson-12-01",
                         "section_id": "section-12",
-                        "title": "Binary Search",
+                        "title": "חיפוש בינארי (Binary Search)",
                         "order": 1,
-                        "content": "# Binary Search\n\nFind a value in a **sorted** array in O(log n).\n\n```python\ndef binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1\n```\n\nAlways ask: *is the input sorted?* If yes, think binary search first.",
+                        "content": "# חיפוש בינארי (Binary Search)\n\nמציאת ערך במערך **ממוין** ב-O(log n).\n\n```python\ndef binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1\n```\n\nתמיד שאלו: *האם הקלט ממוין?* אם כן, חשבו קודם על חיפוש בינארי.",
                     },
                     "lesson-12-02": {
                         "id": "lesson-12-02",
                         "section_id": "section-12",
-                        "title": "Merge Sort & Quick Sort",
+                        "title": "Merge Sort ו-Quick Sort",
                         "order": 2,
-                        "content": "# Merge Sort & Quick Sort\n\n## Merge Sort — O(n log n) guaranteed\n- Divide array in half, sort each half, merge.\n- Stable sort. Uses O(n) extra space.\n\n## Quick Sort — O(n log n) average\n- Pick a pivot, partition around it, recurse.\n- In-place, O(log n) stack space.\n- Worst case O(n²) with bad pivot choice.\n\n**Interview rule:** Default to Merge Sort when stability matters; Quick Sort for raw speed.",
+                        "content": "# Merge Sort ו-Quick Sort\n\n## Merge Sort — O(n log n) מובטח\n- מחלקים את המערך לשניים, ממיינים כל חצי, וממזגים.\n- מיון יציב (Stable). משתמש ב-O(n) זיכרון נוסף.\n\n## Quick Sort — O(n log n) בממוצע\n- בוחרים pivot, מחלקים סביבו, וקוראים רקורסיבית.\n- In-place, זיכרון מחסנית O(log n).\n- מקרה גרוע O(n²) עם בחירת pivot גרועה.\n\n**כלל אצבע לראיונות:** ברירת מחדל ל-Merge Sort כשיציבות חשובה; Quick Sort למהירות גולמית.",
                     },
                     "lesson-12-03": {
                         "id": "lesson-12-03",
                         "section_id": "section-12",
-                        "title": "Dynamic Programming Intro",
+                        "title": "מבוא לתכנות דינמי (Dynamic Programming)",
                         "order": 3,
-                        "content": "# Dynamic Programming Intro\n\nDP solves problems by breaking them into overlapping subproblems and caching results.\n\n## Fibonacci — Naive O(2ⁿ) → DP O(n)\n```python\ndef fib(n, memo={}):\n    if n <= 1: return n\n    if n not in memo:\n        memo[n] = fib(n-1) + fib(n-2)\n    return memo[n]\n```\n\n## When to use DP\n- Optimal substructure: optimal solution built from optimal sub-solutions.\n- Overlapping subproblems: same sub-problems computed multiple times.",
+                        "content": "# מבוא לתכנות דינמי (Dynamic Programming)\n\nתכנות דינמי (DP) פותר בעיות על ידי פירוק לתת-בעיות חופפות ושמירת תוצאות ב-cache.\n\n## פיבונאצ'י — נאיבי O(2ⁿ) → DP O(n)\n```python\ndef fib(n, memo={}):\n    if n <= 1: return n\n    if n not in memo:\n        memo[n] = fib(n-1) + fib(n-2)\n    return memo[n]\n```\n\n## מתי להשתמש ב-DP\n- מבנה אופטימלי: פתרון אופטימלי בנוי מתת-פתרונות אופטימליים.\n- תת-בעיות חופפות: אותן תת-בעיות מחושבות שוב ושוב.",
                     },
                 },
             },
@@ -199,24 +199,24 @@ COURSES_DB: dict = {
     },
     "course-02": {
         "id": "course-02",
-        "title": "React & TypeScript Mastery",
-        "description": "Build modern, type-safe web applications with React 18, TypeScript, and the latest ecosystem tools.",
+        "title": "שליטה ב-React ו-TypeScript",
+        "description": "בנו אפליקציות ווב מודרניות ובטוחות-טיפוסים עם React 18, TypeScript, וכלי האקוסיסטם העדכניים ביותר.",
         "image_url": "https://placehold.co/600x340/0288d1/ffffff?text=React+%26+TypeScript",
         "sections": {
             "section-03": {
                 "id": "section-03",
                 "course_id": "course-02",
-                "title": "TypeScript Foundations",
+                "title": "יסודות TypeScript",
                 "order": 1,
                 "lessons": {
                     "lesson-03-01": {
                         "id": "lesson-03-01",
                         "section_id": "section-03",
-                        "title": "Types, Interfaces & Generics",
+                        "title": "טיפוסים, Interfaces ו-Generics",
                         "order": 1,
                         "content": (
-                            "# Types, Interfaces & Generics\n\n"
-                            "TypeScript adds a static type layer on top of JavaScript.\n\n"
+                            "# טיפוסים, Interfaces ו-Generics\n\n"
+                            "TypeScript מוסיף שכבת טיפוסים סטטית מעל JavaScript.\n\n"
                             "```typescript\n"
                             "interface User {\n"
                             "  id: number\n"
@@ -227,17 +227,17 @@ COURSES_DB: dict = {
                             "  return value\n"
                             "}\n"
                             "```\n\n"
-                            "Generics let you write reusable, type-safe utilities without sacrificing flexibility."
+                            "Generics מאפשרים לכתוב כלי-עזר גנריים ובטוחי-טיפוסים בלי לוותר על גמישות."
                         ),
                     },
                     "lesson-03-02": {
                         "id": "lesson-03-02",
                         "section_id": "section-03",
-                        "title": "Type Narrowing & Guards",
+                        "title": "צמצום טיפוסים (Type Narrowing) ו-Guards",
                         "order": 2,
                         "content": (
-                            "# Type Narrowing & Guards\n\n"
-                            "TypeScript narrows union types inside conditional blocks automatically.\n\n"
+                            "# צמצום טיפוסים (Type Narrowing) ו-Guards\n\n"
+                            "TypeScript מצמצם טיפוסי איחוד (union) בתוך בלוקים תנאיים באופן אוטומטי.\n\n"
                             "```typescript\n"
                             "type Result = { ok: true; data: string } | { ok: false; error: string }\n\n"
                             "function handle(result: Result) {\n"
@@ -257,7 +257,7 @@ COURSES_DB: dict = {
                         "order": 3,
                         "content": (
                             "# Utility Types\n\n"
-                            "TypeScript ships with built-in mapped types that transform existing types.\n\n"
+                            "ל-TypeScript יש טיפוסי mapped מובנים שממירים טיפוסים קיימים.\n\n"
                             "```typescript\n"
                             "interface Course {\n"
                             "  id: string\n"
@@ -268,7 +268,7 @@ COURSES_DB: dict = {
                             "type DraftCourse   = Partial<Course>\n"
                             "type ReadonlyCourse = Readonly<Course>\n"
                             "```\n\n"
-                            "These patterns keep types DRY and prevent accidental mutation."
+                            "הדפוסים האלה שומרים על הטיפוסים DRY ומונעים שינוי בשוגג."
                         ),
                     },
                 },
@@ -276,17 +276,17 @@ COURSES_DB: dict = {
             "section-04": {
                 "id": "section-04",
                 "course_id": "course-02",
-                "title": "React 18 Patterns",
+                "title": "דפוסי React 18",
                 "order": 2,
                 "lessons": {
                     "lesson-04-01": {
                         "id": "lesson-04-01",
                         "section_id": "section-04",
-                        "title": "useState & useReducer",
+                        "title": "useState ו-useReducer",
                         "order": 1,
                         "content": (
-                            "# useState & useReducer\n\n"
-                            "Use `useState` for simple values and `useReducer` for complex state machines.\n\n"
+                            "# useState ו-useReducer\n\n"
+                            "השתמשו ב-`useState` לערכים פשוטים וב-`useReducer` למכונות מצב מורכבות.\n\n"
                             "```typescript\n"
                             "type Action = { type: 'increment' } | { type: 'reset' }\n\n"
                             "function reducer(state: number, action: Action): number {\n"
@@ -302,11 +302,11 @@ COURSES_DB: dict = {
                     "lesson-04-02": {
                         "id": "lesson-04-02",
                         "section_id": "section-04",
-                        "title": "useEffect & Data Fetching",
+                        "title": "useEffect ושליפת נתונים",
                         "order": 2,
                         "content": (
-                            "# useEffect & Data Fetching\n\n"
-                            "`useEffect` runs after render. Always clean up subscriptions.\n\n"
+                            "# useEffect ושליפת נתונים\n\n"
+                            "`useEffect` רץ אחרי הרינדור. תמיד נקו (cleanup) subscriptions.\n\n"
                             "```typescript\n"
                             "useEffect(() => {\n"
                             "  let active = true\n\n"
@@ -316,17 +316,17 @@ COURSES_DB: dict = {
                             "  return () => { active = false }\n"
                             "}, [])\n"
                             "```\n\n"
-                            "The `active` flag prevents state updates on unmounted components."
+                            "הדגל `active` מונע עדכוני מצב ברכיבים שכבר הוסרו (unmounted)."
                         ),
                     },
                     "lesson-04-03": {
                         "id": "lesson-04-03",
                         "section_id": "section-04",
-                        "title": "Custom Hooks",
+                        "title": "Custom Hooks (הוקים מותאמים אישית)",
                         "order": 3,
                         "content": (
-                            "# Custom Hooks\n\n"
-                            "Extract reusable stateful logic into functions prefixed with `use`.\n\n"
+                            "# Custom Hooks (הוקים מותאמים אישית)\n\n"
+                            "חילצו לוגיקת state ניתנת לשימוש חוזר לתוך פונקציות שמתחילות ב-`use`.\n\n"
                             "```typescript\n"
                             "function useFetch<T>(url: string) {\n"
                             "  const [data, setData] = useState<T | null>(null)\n"
@@ -345,59 +345,59 @@ COURSES_DB: dict = {
     },
     "course-03": {
         "id": "course-03",
-        "title": "System Design for Developers",
-        "description": "Learn how to design scalable, fault-tolerant distributed systems — from databases to load balancers.",
+        "title": "System Design למפתחים",
+        "description": "למדו לתכנן מערכות מבוזרות מדרגיות ועמידות בפני תקלות — ממסדי נתונים ועד מאזני עומסים.",
         "image_url": "https://placehold.co/600x340/388e3c/ffffff?text=System+Design",
         "sections": {
             "section-05": {
                 "id": "section-05",
                 "course_id": "course-03",
-                "title": "Core Concepts",
+                "title": "מושגי יסוד",
                 "order": 1,
                 "lessons": {
                     "lesson-05-01": {
                         "id": "lesson-05-01",
                         "section_id": "section-05",
-                        "title": "Scalability vs. Performance",
+                        "title": "Scalability מול Performance (מדרגיות מול ביצועים)",
                         "order": 1,
                         "content": (
-                            "# Scalability vs. Performance\n\n"
-                            "- **Performance** is about making a single request faster.\n"
-                            "- **Scalability** is about handling more requests without degradation.\n\n"
-                            "## Vertical vs. Horizontal Scaling\n"
-                            "- **Vertical (scale up):** Bigger machine — more CPU, RAM. Simple but has a ceiling.\n"
-                            "- **Horizontal (scale out):** More machines. Requires stateless services and a load balancer."
+                            "# Scalability מול Performance (מדרגיות מול ביצועים)\n\n"
+                            "- **Performance (ביצועים)** — הפיכת בקשה בודדת למהירה יותר.\n"
+                            "- **Scalability (מדרגיות)** — התמודדות עם יותר בקשות בלי פגיעה בביצועים.\n\n"
+                            "## Scaling אנכי מול אופקי\n"
+                            "- **אנכי (scale up):** מחשב חזק יותר — יותר CPU, RAM. פשוט אבל יש תקרה.\n"
+                            "- **אופקי (scale out):** יותר מחשבים. דורש שירותים stateless ו-load balancer."
                         ),
                     },
                     "lesson-05-02": {
                         "id": "lesson-05-02",
                         "section_id": "section-05",
-                        "title": "CAP Theorem",
+                        "title": "משפט CAP",
                         "order": 2,
                         "content": (
-                            "# CAP Theorem\n\n"
-                            "A distributed system can guarantee at most **2 of 3** properties:\n\n"
-                            "- **C**onsistency — every read returns the latest write.\n"
-                            "- **A**vailability — every request gets a response (not necessarily latest).\n"
-                            "- **P**artition Tolerance — the system works even when nodes can't communicate.\n\n"
-                            "In practice, network partitions happen — so you choose between **CP** or **AP**."
+                            "# משפט CAP\n\n"
+                            "מערכת מבוזרת יכולה להבטיח לכל היותר **2 מתוך 3** תכונות:\n\n"
+                            "- **C**onsistency (עקביות) — כל קריאה מחזירה את הכתיבה העדכנית ביותר.\n"
+                            "- **A**vailability (זמינות) — כל בקשה מקבלת תשובה (לא בהכרח העדכנית ביותר).\n"
+                            "- **P**artition Tolerance (עמידות בפני חלוקה) — המערכת פועלת גם כשצמתים לא יכולים לתקשר.\n\n"
+                            "בפועל, partitions ברשת קורים — אז בוחרים בין **CP** ל-**AP**."
                         ),
                     },
                     "lesson-05-03": {
                         "id": "lesson-05-03",
                         "section_id": "section-05",
-                        "title": "Load Balancers",
+                        "title": "מאזני עומסים (Load Balancers)",
                         "order": 3,
                         "content": (
-                            "# Load Balancers\n\n"
-                            "A load balancer distributes incoming traffic across multiple servers.\n\n"
-                            "## Common Strategies\n"
-                            "- **Round Robin** — requests cycle through servers in order.\n"
-                            "- **Least Connections** — routes to the server with fewest active connections.\n"
-                            "- **IP Hash** — same client IP always hits the same server (useful for sessions).\n\n"
-                            "## Layer 4 vs. Layer 7\n"
-                            "- **L4** operates on TCP/UDP — fast, no content inspection.\n"
-                            "- **L7** operates on HTTP — can route by URL path, headers, or cookies."
+                            "# מאזני עומסים (Load Balancers)\n\n"
+                            "מאזן עומסים מפזר תעבורה נכנסת בין כמה שרתים.\n\n"
+                            "## אסטרטגיות נפוצות\n"
+                            "- **Round Robin** — בקשות עוברות בין שרתים לפי סדר.\n"
+                            "- **Least Connections** — מנתב לשרת עם הכי פחות חיבורים פעילים.\n"
+                            "- **IP Hash** — אותה כתובת IP תמיד מגיעה לאותו שרת (שימושי ל-sessions).\n\n"
+                            "## Layer 4 מול Layer 7\n"
+                            "- **L4** פועל על TCP/UDP — מהיר, בלי בדיקת תוכן.\n"
+                            "- **L7** פועל על HTTP — יכול לנתב לפי נתיב URL, headers, או cookies."
                         ),
                     },
                 },
@@ -405,58 +405,58 @@ COURSES_DB: dict = {
             "section-06": {
                 "id": "section-06",
                 "course_id": "course-03",
-                "title": "Data Storage Strategies",
+                "title": "אסטרטגיות אחסון נתונים",
                 "order": 2,
                 "lessons": {
                     "lesson-06-01": {
                         "id": "lesson-06-01",
                         "section_id": "section-06",
-                        "title": "SQL vs. NoSQL",
+                        "title": "SQL מול NoSQL",
                         "order": 1,
                         "content": (
-                            "# SQL vs. NoSQL\n\n"
-                            "## SQL (Relational)\n"
-                            "- Structured schema, ACID transactions, powerful joins.\n"
-                            "- Best for: financial systems, ERP, anything requiring strong consistency.\n\n"
+                            "# SQL מול NoSQL\n\n"
+                            "## SQL (יחסי)\n"
+                            "- סכימה מובנית, טרנזקציות ACID, joins עוצמתיים.\n"
+                            "- הכי טוב עבור: מערכות פיננסיות, ERP, כל דבר שדורש עקביות חזקה.\n\n"
                             "## NoSQL\n"
-                            "- Flexible schema, horizontal scaling, eventual consistency.\n"
-                            "- Types: Document (MongoDB), Key-Value (Redis), Column (Cassandra), Graph (Neo4j).\n\n"
-                            "## Rule of Thumb\n"
-                            "Start with SQL. Switch to NoSQL only when you have a concrete scaling problem SQL cannot solve."
+                            "- סכימה גמישה, scaling אופקי, עקביות eventual.\n"
+                            "- סוגים: Document (MongoDB), Key-Value (Redis), Column (Cassandra), Graph (Neo4j).\n\n"
+                            "## כלל אצבע\n"
+                            "התחילו עם SQL. עברו ל-NoSQL רק כשיש לכם בעיית scaling קונקרטית ש-SQL לא יכול לפתור."
                         ),
                     },
                     "lesson-06-02": {
                         "id": "lesson-06-02",
                         "section_id": "section-06",
-                        "title": "Caching Strategies",
+                        "title": "אסטרטגיות Caching (מטמון)",
                         "order": 2,
                         "content": (
-                            "# Caching Strategies\n\n"
-                            "Caching reduces latency and database load by storing computed results.\n\n"
-                            "## Patterns\n"
-                            "- **Cache-Aside:** App checks cache first; on miss, loads from DB and populates cache.\n"
-                            "- **Write-Through:** Write to cache and DB simultaneously.\n"
-                            "- **Write-Behind:** Write to cache immediately; sync to DB asynchronously.\n\n"
-                            "## Eviction Policies\n"
-                            "- **LRU** (Least Recently Used) — most common, good general purpose.\n"
-                            "- **TTL** (Time To Live) — expire entries after a fixed duration."
+                            "# אסטרטגיות Caching (מטמון)\n\n"
+                            "Caching מקטין latency ועומס על מסד הנתונים על ידי שמירת תוצאות מחושבות.\n\n"
+                            "## דפוסים\n"
+                            "- **Cache-Aside:** האפליקציה בודקת קודם ב-cache; אם אין (miss), טוענת מה-DB וממלאת את ה-cache.\n"
+                            "- **Write-Through:** כותבים ל-cache ול-DB בו-זמנית.\n"
+                            "- **Write-Behind:** כותבים ל-cache מיד; מסנכרנים ל-DB באופן אסינכרוני.\n\n"
+                            "## מדיניות פינוי (Eviction)\n"
+                            "- **LRU** (הכי פחות נעשה בו שימוש לאחרונה) — הכי נפוץ, מתאים לרוב המקרים.\n"
+                            "- **TTL** (זמן חיים) — פוקע אחרי משך זמן קבוע."
                         ),
                     },
                     "lesson-06-03": {
                         "id": "lesson-06-03",
                         "section_id": "section-06",
-                        "title": "Database Sharding",
+                        "title": "Sharding למסדי נתונים",
                         "order": 3,
                         "content": (
-                            "# Database Sharding\n\n"
-                            "Sharding splits a large dataset across multiple database nodes (shards).\n\n"
-                            "## Shard Key Selection\n"
-                            "The shard key determines which node stores each row. A poor key causes **hotspots**.\n\n"
-                            "- **Good key:** `user_id` — distributes writes evenly across shards.\n"
-                            "- **Bad key:** `created_at` — all new writes hit the same shard (time-based hotspot).\n\n"
-                            "## Downsides\n"
-                            "- Cross-shard joins are expensive or impossible.\n"
-                            "- Re-sharding is painful — plan the key carefully upfront."
+                            "# Sharding למסדי נתונים\n\n"
+                            "Sharding מפצל dataset גדול בין כמה צמתי מסד נתונים (shards).\n\n"
+                            "## בחירת Shard Key\n"
+                            "ה-shard key קובע איזה צומת שומר כל שורה. key גרוע גורם ל-**hotspots**.\n\n"
+                            "- **key טוב:** `user_id` — מפזר כתיבות באופן שווה בין ה-shards.\n"
+                            "- **key גרוע:** `created_at` — כל הכתיבות החדשות פוגעות באותו shard (hotspot מבוסס-זמן).\n\n"
+                            "## חסרונות\n"
+                            "- joins בין shards יקרים או בלתי אפשריים.\n"
+                            "- re-sharding כואב — תכננו את ה-key בקפידה מראש."
                         ),
                     },
                 },
@@ -465,47 +465,46 @@ COURSES_DB: dict = {
     },
     "course-01": {
         "id": "course-01",
-        "id": "course-01",
-        "title": "Full-Stack Python Bootcamp",
-        "description": "Master Python, FastAPI, and React from zero to production-ready developer.",
+        "title": "בוטקמפ Full-Stack בפייתון",
+        "description": "שליטה בפייתון, FastAPI ו-React — מאפס למפתח/ת מוכן/ה לפרודקשן.",
         "image_url": "https://placehold.co/600x340/1976d2/ffffff?text=Python+Bootcamp",
         "sections": {
             "section-01": {
                 "id": "section-01",
                 "course_id": "course-01",
-                "title": "Python Fundamentals",
+                "title": "יסודות פייתון",
                 "order": 1,
                 "lessons": {
                     "lesson-01-01": {
                         "id": "lesson-01-01",
                         "section_id": "section-01",
-                        "title": "Variables & Data Types",
+                        "title": "משתנים וטיפוסי נתונים",
                         "order": 1,
                         "content": (
-                            "# Variables & Data Types\n\n"
-                            "In Python every value has a type. The most common built-in types are:\n\n"
+                            "# משתנים וטיפוסי נתונים\n\n"
+                            "בפייתון לכל ערך יש טיפוס. הטיפוסים המובנים הנפוצים ביותר הם:\n\n"
                             "```python\n"
                             "name: str = 'Alice'\n"
                             "age: int = 30\n"
                             "height: float = 1.72\n"
                             "is_student: bool = True\n"
                             "```\n\n"
-                            "Python infers the type at runtime, but using type hints makes the code self-documenting "
-                            "and enables static analysis tools like `mypy`.\n\n"
-                            "## Key Rules\n"
-                            "- Variable names are `snake_case`.\n"
-                            "- Use `=` for assignment, `:` for type annotations.\n"
-                            "- Strings can use single or double quotes — be consistent."
+                            "פייתון מסיקה את הטיפוס בזמן ריצה, אבל שימוש ב-type hints הופך את הקוד למתועד יותר "
+                            "ומאפשר כלי ניתוח סטטי כמו `mypy`.\n\n"
+                            "## כללים מרכזיים\n"
+                            "- שמות משתנים הם ב-`snake_case`.\n"
+                            "- משתמשים ב-`=` להשמה, ב-`:` להערות טיפוס (type annotations).\n"
+                            "- מחרוזות יכולות להשתמש בגרשיים בודדים או כפולים — היו עקביים."
                         ),
                     },
                     "lesson-01-02": {
                         "id": "lesson-01-02",
                         "section_id": "section-01",
-                        "title": "Control Flow: if / elif / else",
+                        "title": "בקרת זרימה: if / elif / else",
                         "order": 2,
                         "content": (
-                            "# Control Flow\n\n"
-                            "Python uses indentation (4 spaces) to define code blocks — no braces needed.\n\n"
+                            "# בקרת זרימה\n\n"
+                            "פייתון משתמשת בהזחה (4 רווחים) להגדרת בלוקי קוד — בלי צורך בסוגריים מסולסלים.\n\n"
                             "```python\n"
                             "score = 85\n\n"
                             "if score >= 90:\n"
@@ -516,7 +515,7 @@ COURSES_DB: dict = {
                             "    grade = 'C'\n\n"
                             "print(grade)  # B\n"
                             "```\n\n"
-                            "## Ternary Expression\n"
+                            "## ביטוי תנאי (Ternary)\n"
                             "```python\n"
                             "label = 'pass' if score >= 60 else 'fail'\n"
                             "```"
@@ -525,19 +524,19 @@ COURSES_DB: dict = {
                     "lesson-01-03": {
                         "id": "lesson-01-03",
                         "section_id": "section-01",
-                        "title": "Functions & Scope",
+                        "title": "פונקציות ו-Scope (תחום הכרה)",
                         "order": 3,
                         "content": (
-                            "# Functions & Scope\n\n"
-                            "Functions are defined with `def` and support default arguments, *args, and **kwargs.\n\n"
+                            "# פונקציות ו-Scope (תחום הכרה)\n\n"
+                            "פונקציות מוגדרות עם `def` ותומכות בארגומנטים ברירת מחדל, *args ו-**kwargs.\n\n"
                             "```python\n"
                             "def greet(name: str, greeting: str = 'Hello') -> str:\n"
                             "    return f'{greeting}, {name}!'\n\n"
                             "print(greet('Bob'))           # Hello, Bob!\n"
                             "print(greet('Bob', 'Shalom')) # Shalom, Bob!\n"
                             "```\n\n"
-                            "## Scope Rules (LEGB)\n"
-                            "Python resolves names in this order: **L**ocal → **E**nclosing → **G**lobal → **B**uilt-in."
+                            "## כללי Scope (LEGB)\n"
+                            "פייתון פותרת שמות בסדר הזה: **L**ocal → **E**nclosing → **G**lobal → **B**uilt-in."
                         ),
                     },
                 },
@@ -545,17 +544,17 @@ COURSES_DB: dict = {
             "section-02": {
                 "id": "section-02",
                 "course_id": "course-01",
-                "title": "FastAPI Essentials",
+                "title": "יסודות FastAPI",
                 "order": 2,
                 "lessons": {
                     "lesson-02-01": {
                         "id": "lesson-02-01",
                         "section_id": "section-02",
-                        "title": "Your First FastAPI App",
+                        "title": "אפליקציית FastAPI הראשונה שלכם",
                         "order": 1,
                         "content": (
-                            "# Your First FastAPI App\n\n"
-                            "FastAPI is a modern, high-performance web framework built on top of Starlette and Pydantic.\n\n"
+                            "# אפליקציית FastAPI הראשונה שלכם\n\n"
+                            "FastAPI הוא framework web מודרני וביצועי, בנוי מעל Starlette ו-Pydantic.\n\n"
                             "```python\n"
                             "from fastapi import FastAPI\n\n"
                             "app = FastAPI()\n\n"
@@ -563,39 +562,39 @@ COURSES_DB: dict = {
                             "def root():\n"
                             "    return {'message': 'Hello World'}\n"
                             "```\n\n"
-                            "Run with:\n"
+                            "הריצו עם:\n"
                             "```bash\n"
                             "uvicorn main:app --reload\n"
                             "```\n\n"
-                            "Visit `http://localhost:8000/docs` for the auto-generated Swagger UI."
+                            "בקרו ב-`http://localhost:8000/docs` לתיעוד Swagger שנוצר אוטומטית."
                         ),
                     },
                     "lesson-02-02": {
                         "id": "lesson-02-02",
                         "section_id": "section-02",
-                        "title": "Path & Query Parameters",
+                        "title": "פרמטרים ב-Path וב-Query",
                         "order": 2,
                         "content": (
-                            "# Path & Query Parameters\n\n"
-                            "FastAPI automatically parses and validates parameters from the URL.\n\n"
+                            "# פרמטרים ב-Path וב-Query\n\n"
+                            "FastAPI מפענח ומאמת פרמטרים מה-URL באופן אוטומטי.\n\n"
                             "```python\n"
                             "@app.get('/items/{item_id}')\n"
                             "def get_item(item_id: int, q: str | None = None):\n"
                             "    return {'item_id': item_id, 'query': q}\n"
                             "```\n\n"
-                            "- `item_id` is a **path parameter** — declared in the route string.\n"
-                            "- `q` is a **query parameter** — appended to the URL: `?q=search`.\n"
-                            "- Pydantic validates types automatically; invalid input returns HTTP 422."
+                            "- `item_id` הוא **path parameter** — מוצהר בתוך מחרוזת הנתיב.\n"
+                            "- `q` הוא **query parameter** — מצורף ל-URL: `?q=search`.\n"
+                            "- Pydantic מאמת טיפוסים אוטומטית; קלט לא תקין מחזיר שגיאת HTTP 422."
                         ),
                     },
                     "lesson-02-03": {
                         "id": "lesson-02-03",
                         "section_id": "section-02",
-                        "title": "Request Bodies with Pydantic",
+                        "title": "גוף הבקשה (Request Body) עם Pydantic",
                         "order": 3,
                         "content": (
-                            "# Request Bodies with Pydantic\n\n"
-                            "Declare the expected JSON shape using a `BaseModel` subclass.\n\n"
+                            "# גוף הבקשה (Request Body) עם Pydantic\n\n"
+                            "הצהירו על צורת ה-JSON הצפויה באמצעות מחלקה שיורשת מ-`BaseModel`.\n\n"
                             "```python\n"
                             "from pydantic import BaseModel\n\n"
                             "class Item(BaseModel):\n"
@@ -606,16 +605,16 @@ COURSES_DB: dict = {
                             "def create_item(item: Item):\n"
                             "    return item\n"
                             "```\n\n"
-                            "FastAPI will:\n"
-                            "1. Parse the incoming JSON body.\n"
-                            "2. Validate every field against its type.\n"
-                            "3. Return a detailed 422 error for any mismatch — automatically."
+                            "FastAPI יבצע:\n"
+                            "1. פענוח גוף ה-JSON הנכנס.\n"
+                            "2. אימות כל שדה מול הטיפוס שלו.\n"
+                            "3. החזרת שגיאת 422 מפורטת על כל אי-התאמה — אוטומטית."
                         ),
                     },
                 },
             },
         },
-    }
+    },
 }
 
 PROGRESS_DB: dict = {

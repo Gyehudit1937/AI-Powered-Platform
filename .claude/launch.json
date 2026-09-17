@@ -2,6 +2,12 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "coding-academy-client",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "client", "run", "dev", "--", "--port", "5173"],
+      "port": 5173
+    },
+    {
       "name": "web-transactionslogs",
       "runtimeExecutable": "dotnet",
       "runtimeArgs": ["run", "--project", "C:\\יהודית\\מגה\\Innova\\innova-10\\Innova.Net10Pilot.Web", "--urls", "http://localhost:5300"],

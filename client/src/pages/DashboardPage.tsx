@@ -25,10 +25,10 @@ import { useProgress } from '../hooks/useProgress'
 import type { Course } from '../types'
 
 const STATS = [
-  { icon: <MenuBookIcon />, label: 'Courses', value: '6' },
-  { icon: <SchoolIcon />, label: 'Lessons', value: '36' },
-  { icon: <EmojiEventsIcon />, label: 'Students', value: '1,240' },
-  { icon: <TrendingUpIcon />, label: 'Completion Rate', value: '87%' },
+  { icon: <MenuBookIcon />, label: 'קורסים', value: '6' },
+  { icon: <SchoolIcon />, label: 'שיעורים', value: '36' },
+  { icon: <EmojiEventsIcon />, label: 'סטודנטים', value: '1,240' },
+  { icon: <TrendingUpIcon />, label: 'שיעור השלמה', value: '87%' },
 ]
 
 export default function DashboardPage() {
@@ -58,11 +58,11 @@ export default function DashboardPage() {
                 <SchoolIcon sx={{ fontSize: 20 }} />
               </Avatar>
               <Typography variant="h6" fontWeight={800} color="primary.main">
-                Coding Academy
+                האקדמיה לתכנות
               </Typography>
             </Stack>
             <Stack direction="row" spacing={3}>
-              {['Courses', 'My Learning', 'Community'].map((item) => (
+              {['קורסים', 'הלמידה שלי', 'קהילה'].map((item) => (
                 <Typography
                   key={item}
                   variant="body2"
@@ -98,16 +98,16 @@ export default function DashboardPage() {
         />
         <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <Typography variant="overline" sx={{ opacity: 0.8, letterSpacing: 3, fontSize: 12 }}>
-            YOUR LEARNING PLATFORM
+            פלטפורמת הלמידה שלך
           </Typography>
           <Typography variant="h3" fontWeight={800} mt={1} mb={2} sx={{ lineHeight: 1.2 }}>
-            Become a Production-Ready
+            הפכו למפתחי תוכנה
             <br />
-            Software Engineer
+            ברמת Production
           </Typography>
           <Typography variant="h6" sx={{ opacity: 0.85, fontWeight: 400, maxWidth: 560 }}>
-            Structured, project-based courses that take you from concept to deployed code —
-            with an AI mentor guiding every step.
+            קורסים מובנים מבוססי פרויקטים שלוקחים אתכם מרעיון ועד קוד בפריסה —
+            עם מנטור AI שמלווה כל צעד.
           </Typography>
 
           {/* Stats row */}
@@ -145,7 +145,7 @@ export default function DashboardPage() {
             </Avatar>
             <Box flex={1}>
               <Typography variant="caption" color="primary" fontWeight={700} sx={{ textTransform: 'uppercase', letterSpacing: 1 }}>
-                Continue where you left off
+                תמשיכו מאיפה שהפסקתם
               </Typography>
               <Typography variant="subtitle1" fontWeight={700} mt={0.3}>
                 {progress.current_lesson_id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
@@ -167,9 +167,9 @@ export default function DashboardPage() {
         {/* ── Section heading ── */}
         <Stack direction="row" alignItems="baseline" justifyContent="space-between" mb={3}>
           <Box>
-            <Typography variant="h5" fontWeight={800}>All Courses</Typography>
+            <Typography variant="h5" fontWeight={800}>כל הקורסים</Typography>
             <Typography variant="body2" color="text.secondary">
-              {courses.length} courses · pick what's next
+              {courses.length} קורסים · בחרו במה להתחיל
             </Typography>
           </Box>
         </Stack>
@@ -223,7 +223,7 @@ export default function DashboardPage() {
                       {active && (
                         <Chip
                           icon={<PlayCircleIcon sx={{ fontSize: 15 }} />}
-                          label="In Progress"
+                          label="בתהליך"
                           color="primary"
                           size="small"
                           sx={{
@@ -247,7 +247,7 @@ export default function DashboardPage() {
                         <Box mt={1}>
                           <Stack direction="row" justifyContent="space-between" mb={0.5}>
                             <Typography variant="caption" color="primary.main" fontWeight={700}>
-                              Your progress
+                              ההתקדמות שלך
                             </Typography>
                             <Typography variant="caption" color="primary.main" fontWeight={700}>
                               {progress.completion_percentage}%
@@ -261,7 +261,7 @@ export default function DashboardPage() {
                         </Box>
                       ) : (
                         <Chip
-                          label="Start Course →"
+                          label="← התחל קורס"
                           size="small"
                           variant="outlined"
                           color="primary"
